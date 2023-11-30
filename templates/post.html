@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post['title'] }} - Flask Blog</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <ul>
+        <h1 style="background-color: rgba(230, 230, 250, 0.9);">{{ post['title'] }}</h1>
+        <li>{{ post['content'] }}</li>
+    </ul>
+    <ul>
+        <h2 style="background-color: rgba(230, 230, 250, 0.7);">Comments</h2>
+        {% for comment in post.comments %}
+        <p>{{ comment.content|e }}</p>
+        {% endfor %}
+    </ul>
+
+    <ul>
+        <h3 style="background-color: rgba(210, 210, 210, 0.7);">Add a Comment</h3>
+        <form method="post" action="{{ url_for('add_comment', post_id=post.id) }}">
+            {{ form.hidden_tag() }}
+            {{ form.content.label }}
+            {{ form.content }}
+            {{ form.submit }}
+        </form>
+    </ul>
+    <a href="{{ url_for('home') }}" class="home-button">Back to Home</a>
+</body>
+</html>

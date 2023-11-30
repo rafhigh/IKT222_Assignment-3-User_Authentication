@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <h2>Register</h2>
+    
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li style="color: red;">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    
+    <form method="POST" action="{{ url_for('register') }}">
+        {{ form.hidden_tag() }}
+        <label for="username">Username:</label>
+        {{ form.username(class="form-control", placeholder="Enter your username") }}
+        <label for="password">Password:</label>
+        {{ form.password(class="form-control", placeholder="Enter your password") }}
+        <label for="confirm_password">Confirm Password:</label>
+        {{ form.confirm_password(class="form-control", placeholder="Confirm your password") }}
+        {{ form.submit(class="btn btn-primary") }}
+    </form>
+
+    <ul>
+        {% if qr_code_data %}
+        <img src="data:image/png;base64,{{ qr_code_data }}" alt="QR Code">
+        {% endif %}
+    </ul>
+    
+    <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a>.</p>
+</body>
+</html>

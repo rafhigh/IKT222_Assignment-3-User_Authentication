@@ -1,0 +1,45 @@
+/* static/css/styles.css */
+
+/* Add a black border around the navigation bar */
+nav {
+    border: 1px solid black;
+    padding: 10px; /* Optional: Add some padding for spacing */
+}
+
+/* Add a black border around the unordered list (ul) */
+ul {
+    border: 6px solid black;
+    padding: 10px; /* Optional: Add some padding for spacing */
+    background-color:  rgba(230, 230, 250, 0.5);  /* Example color, you can replace this with your preferred color */
+    color: black;  /* Set text color to contrast with the background color */
+}
+
+/* Add a black border around list items (li) */
+li {
+    border: 3px solid black;
+    padding: 10px; /* Optional: Add some padding for spacing */
+    background-color: cyan;  /* Example color, you can replace this with your preferred color */
+    color: black;  /* Set text color to contrast with the background color */
+}
+
+p {
+    padding: 10px; /* Optional: Add some padding for spacing */
+    background-color: darkturquoise;  /* Example color, you can replace this with your preferred color */
+    color: black;  /* Set text color to contrast with the background color */
+}
+
+body {
+    /* Set background image properties */
+    background-image: url('/static/images/wallpaperflare.com_wallpaper.jpg'); /* Adjust the path and file name */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+    height: 100vh;  /* Set the height of the background to 100% of the viewport height */
+}
+
+.home-button {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
